@@ -1,4 +1,4 @@
-package clients;
+package clients.impl;
 
 public class Owner {
     public String name;
