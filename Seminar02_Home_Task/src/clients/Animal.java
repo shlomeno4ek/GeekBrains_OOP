@@ -1,5 +1,4 @@
 package clients;
-import clients.impl.Owner;
 
 import java.time.*;
 import java.lang.*;
@@ -17,7 +16,6 @@ public class Animal {
         this.age = age;
         this.owner = owner;
     }
-    public Animal() {this("Животное", 100, LocalDate.now(), new Owner());}
 
     private void sleep() {
         System.out.println(getType() + " Sleep");
