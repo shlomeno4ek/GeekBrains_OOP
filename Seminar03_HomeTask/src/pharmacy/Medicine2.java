@@ -62,6 +62,6 @@ public class Medicine2 implements Iterable<MedicineComponent>, Comparable<Medici
             powerComponents2 += (int) component.getPower();
         }
 
-        return Integer.compare(powerComponents1, powerComponents2);
+        return Integer.compare(powerComponents2, powerComponents1);
     }
 }

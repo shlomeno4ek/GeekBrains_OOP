@@ -32,10 +32,11 @@ public abstract class MedicineComponent implements Comparable<MedicineComponent>
 
     @Override
     public String toString() {
-        return "MedicineComponent{" +
-                "name='" + name + '\'' +
-                ", weight=" + weight +
-                ", power=" + power +
-                '}';
+//        return "MedicineComponent{" +
+//                "name='" + name + '\'' +
+//                ", weight=" + weight +
+//                ", power=" + power +
+//                '}';
+        return "{name='" + name + ", power=" + power + '}';
     }
 }
