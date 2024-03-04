@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Medicine2 implements Iterable<MedicineComponent>, Comparable<Medicine2>{
+public class Medicine implements Iterable<MedicineComponent>, Comparable<Medicine>{
     private List<MedicineComponent> components;
     private int index;
 
-    public Medicine2() {
+    public Medicine() {
         this.components = new ArrayList<>();
         this.index = 0;
     }
 
-    public Medicine2 addComponent(MedicineComponent component) {
+    public Medicine addComponent(MedicineComponent component) {
         components.add(component);
         return this;
     }
@@ -52,7 +52,7 @@ public class Medicine2 implements Iterable<MedicineComponent>, Comparable<Medici
     }
 
     @Override
-    public int compareTo(Medicine2 o) {
+    public int compareTo(Medicine o) {
         int powerComponents1 = 0;
         int powerComponents2 = 0;
         for(MedicineComponent component : this.components) {

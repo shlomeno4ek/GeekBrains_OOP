@@ -1,4 +1,4 @@
-import pharmacy.Medicine2;
+import pharmacy.Medicine;
 import pharmacy.MedicineComponent;
 import pharmacy.impl.Asitromin;
 import pharmacy.impl.Penicilinium;
@@ -10,16 +10,16 @@ import java.util.Collections;
 public class Main {
     public static void main(String[] args) {
         ArrayList<MedicineComponent> medList = new ArrayList<>();
-        ArrayList<Medicine2> medicinelist = new ArrayList<>();
+        ArrayList<Medicine> medicinelist = new ArrayList<>();
 
         Asitromin asitr = new Asitromin("Asitro", 50, 25);
         Penicilinium penicilinium = new Penicilinium("Penicil", 30, 50);
         Vetbicid vetbic = new Vetbicid("Vetbic", 40, 30);
 
-        Medicine2 medicine1 = new Medicine2();
+        Medicine medicine1 = new Medicine();
         medicine1.addComponent(asitr).addComponent(penicilinium).addComponent(vetbic);
 
-        Medicine2 medicine2 = new Medicine2();
+        Medicine medicine2 = new Medicine();
         medicine2.addComponent(vetbic).addComponent(penicilinium);
 
         medicinelist.add(medicine2);
