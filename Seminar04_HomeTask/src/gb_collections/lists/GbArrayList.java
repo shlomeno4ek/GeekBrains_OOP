@@ -39,7 +39,20 @@ public class GbArrayList<E> implements GbList<E> {
 
     @Override
     public void add(int index, E value) {
-
+        if (size == capacity) {
+            addCapacity();
+        }
+        try {
+            E[] temp = values;
+            values = (E[]) new Object[temp.length + 1];
+            System.arraycopy(temp, 0, values, 0, index);
+            values[index] = value;
+            size++;
+            int amountElementsAfterIndex = temp.length - index - 1;
+            System.arraycopy(temp, index, values, index + 1, amountElementsAfterIndex);
+        } catch (ClassCastException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

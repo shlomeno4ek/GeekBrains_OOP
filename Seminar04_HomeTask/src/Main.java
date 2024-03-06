@@ -6,8 +6,8 @@ import gb_collections.lists.GbLinkedList;
 
 public class Main {
     public static void main(String[] args) {
-//        GbList<Integer> list = new GbArrayList<>();
-        GbList<Integer> list = new GbLinkedList<>();
+        GbList<Integer> list = new GbArrayList<>();
+//        GbList<Integer> list = new GbLinkedList<>();
         list.add(5);
         list.add(4);
         list.add(9);
@@ -20,6 +20,7 @@ public class Main {
         list.add(9);
         list.add(66);
         list.add(8);
+        list.add(8, 5555);
         System.out.println(list.size());
         System.out.println(list);
         list.removeByIndex(1);
