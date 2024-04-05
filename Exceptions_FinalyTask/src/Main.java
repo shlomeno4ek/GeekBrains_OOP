@@ -1,6 +1,5 @@
 import view.UserView;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -8,11 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Фамилия Имя Отчество 12.12.1212 ушег m
+
         UserView uv = new UserView();
         uv.start();
-//        if(!gender.equals("m") && !gender.equals("f")) {
-//
-//        }
-
     }
 }

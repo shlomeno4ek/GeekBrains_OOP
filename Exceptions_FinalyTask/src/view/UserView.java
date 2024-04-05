@@ -1,6 +1,7 @@
 package view;
 
 import controller.UserController;
+import model.Person;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -20,7 +21,7 @@ public class UserView {
 
     private void promt() {
         System.out.println("Введите данные в формате: Фамилия Имя Отчество дата_рождения номер_телефона пол");
-        System.out.println("Все данные должны быть разделены пробелами, а пол одно значение из двух: f или m");
+        System.out.println("Все данные должны быть разделены пробелами, дата рождения в формате дд.мм.гггг, пол - одно значение из f или m");
         data = scanner.nextLine();
     }
 
@@ -29,23 +30,45 @@ public class UserView {
 
         promt();
         String[] arr = data.split(" ");
+//        System.out.println(Arrays.toString(arr));
         try {
             uc.arraySizeIsCorrect(arr);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.err.println(e.getMessage());
-            promt();
-        }
-        System.out.println(Arrays.toString(arr));
-
-//        if(arr.length != 6)
-
-        String gender = arr[5];
-        if(!gender.equals("m") && !gender.equals("f")) {
-
+            start();
         }
 
+        try {
+            uc.birthdayIsCorrected(arr[3]);
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+            start();
+        }
 
-        System.out.println("Hello world!");
+        try {
+            uc.numberPhoneIsCorrected(arr[4]);
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+            start();
+        }
+
+        try {
+            uc.maleIsCorrected(arr[5]);
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+            start();
+        }
+
+        uc.savePerson(new Person(arr));
+
+
+
+
+
+
+
+
+
     }
 
 }
