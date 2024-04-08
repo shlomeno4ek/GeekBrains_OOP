@@ -3,13 +3,12 @@ package view;
 import controller.UserController;
 import model.Person;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class UserView {
 
-    private Scanner scanner;
-    private UserController uc;
+    private final Scanner scanner;
+    private final UserController uc;
 
     private String data;
 
@@ -35,31 +34,28 @@ public class UserView {
             uc.arraySizeIsCorrect(arr);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.err.println(e.getMessage());
-            start();
         }
 
         try {
             uc.birthdayIsCorrected(arr[3]);
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
-            start();
         }
 
         try {
             uc.numberPhoneIsCorrected(arr[4]);
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
-            start();
         }
 
         try {
             uc.maleIsCorrected(arr[5]);
         } catch (IllegalArgumentException e) {
             System.err.println(e.getMessage());
-            start();
         }
 
         uc.savePerson(new Person(arr));
+
 
 
 

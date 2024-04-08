@@ -6,6 +6,8 @@ import model.myExceptions.MaleIsCorrectedException;
 import model.myExceptions.MyArraySizeException;
 import model.myExceptions.NumberPhoneCorrectedException;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 
 public class UserController {
@@ -34,8 +36,14 @@ public class UserController {
 
 
     public void savePerson(Person person) {
-        try() {
-
+        String fn = person.getSurname() + ".txt";
+        try(FileWriter fr = new FileWriter(fn, true)) {
+            fr.write(String.format("<%s><%s><%s><%s><%d><%c>%n",
+                    person.getSurname(), person.getName(), person.getSecondname(),
+                    person.getBirthday(), person.getTelNumber(), person.getMale()));
+            fr.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
